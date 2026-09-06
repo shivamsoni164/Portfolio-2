@@ -61,9 +61,7 @@
         <h1 class="hero__title">How did I reduce loan processing time from 10 days to 4?</h1>
         <p class="hero__subtitle">Designing an end-to-end loan origination system for India&rsquo;s self-employed borrowers.</p>
 
-        <figure class="asset-slot hero__image" data-caption="Project hero image">
-          <img src="images/hero.png" alt="Sahayya loan origination system — hero" />
-        </figure>
+        <figure class="asset-slot hero__image" aria-hidden="true"></figure>
 
         <dl class="meta">
           <div class="meta__col">
@@ -96,28 +94,9 @@
       <section id="customer" class="section">
         <p class="eyebrow">The Customer</p>
 
-        <article class="persona">
-          <div class="persona__media">
-            <figure class="asset-slot persona__photo" data-caption="Suresh — photo">
-              <img src="images/suresh.jpg" alt="Suresh, a self-employed restaurant owner" />
-            </figure>
-            <span class="chip chip--overlay chip--a">Tier 2&ndash;3 India</span>
-            <span class="chip chip--overlay chip--b">Small-town self-employed</span>
-          </div>
-
-          <div class="persona__body">
-            <p class="persona__kicker">Sahayya &middot; The Borrower</p>
-            <h3 class="persona__name">Meet <span>Suresh</span></h3>
-            <p class="persona__desc">Self-employed, steady, and hard to score. He builds his life in cash &mdash; and the credit system was never built to see it.</p>
-            <blockquote class="persona__quote">&ldquo;I&rsquo;ve run my business for twelve years. The bank looks at one number and decides I&rsquo;m not worth the risk.&rdquo;</blockquote>
-            <ul class="chip-row">
-              <li class="chip">Runs a restaurant</li>
-              <li class="chip">Mostly cash income</li>
-              <li class="chip">No formal proof</li>
-              <li class="chip">Invisible to a credit score</li>
-            </ul>
-          </div>
-        </article>
+        <figure class="asset-slot" data-caption="Meet Suresh — the borrower">
+          <img src="images/persona-suresh.png" alt="Meet Suresh — self-employed, steady, and hard to score. A persona card for Sahayya's borrower." />
+        </figure>
 
         <h2 class="section__title">The borrower &mdash; a credit score can&rsquo;t see.</h2>
         <p class="body">Sahayya lends to self-employed borrowers in tier 2&ndash;3 India who need financing quickly to build a house or grow a business. Their income is hard to verify and their credit score rarely reflects how they actually earn, so most banks turn them away. Reaching them means meeting them where they are, on their terms.</p>
@@ -182,53 +161,18 @@
         <h2 class="section__title">Keeping loans moving when a service goes down.</h2>
         <p class="body">Some data comes from outside services, like the credit score pulled in stage two, and those services go down. Blocking the whole loan for something outside Sahayya&rsquo;s control wasn&rsquo;t acceptable, but neither was letting a loan reach disbursement with data missing. So we graded the checks by what was at stake.</p>
 
-        <!-- Asset checks UI (recreated) -->
-        <div class="ui-card" role="img" aria-label="Asset and document checks screen: Aadhaar verification table">
-          <div class="ui-card__tabs">
-            <span class="ui-tab is-active">Asset / Document Checks</span>
-            <span class="ui-tab">Loan &amp; Interest</span>
-            <span class="ui-tab">Installment</span>
-            <span class="ui-tab">Customer Type</span>
-          </div>
-          <div class="ui-card__meta">
-            <span>Date of check &mdash; 26&nbsp;JUN&nbsp;2023</span>
-            <span class="ui-status ui-status--positive">Positive</span>
-            <span class="ui-status ui-status--mandatory">Mandatory</span>
-          </div>
-          <div class="ui-table-wrap">
-            <table class="ui-table">
-              <thead>
-                <tr>
-                  <th>Field</th>
-                  <th>Logged In Values</th>
-                  <th>API Value</th>
-                  <th>New Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="ui-table__section"><td colspan="4">Aadhaar</td></tr>
-                <tr><td>Name</td><td>Suresh Kumar</td><td>Suresh Kumar</td><td>&mdash;</td></tr>
-                <tr><td>DOB</td><td>14 / 08 / 1981</td><td>14 / 08 / 1981</td><td>&mdash;</td></tr>
-                <tr><td>Gender</td><td>Male</td><td>Male</td><td>&mdash;</td></tr>
-                <tr><td>Father&rsquo;s Name</td><td>Ram Kumar</td><td>Ram Kumar</td><td>&mdash;</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="ui-card__remark"><span>Remark</span> Remarks for Aadhaar Document</p>
-        </div>
+        <!-- Asset checks UI -->
+        <figure class="asset-slot" data-caption="Asset / Document checks — Aadhaar verification">
+          <img src="images/asset-checks.png" alt="Asset and document checks screen showing Aadhaar verification: field, logged-in value, API value and new value columns." />
+        </figure>
         <p class="caption">Soft check &mdash; the user marks it here and the application can move ahead.</p>
 
         <p class="body"><strong>Soft checks keep the work moving.</strong> Inside a stage, an agent can complete every step even if an outside value hasn&rsquo;t come back yet. To mark the stage as done, the system looks for that value; if it isn&rsquo;t there, the agent records why, marks it as not available, and moves on to the next stage. A downed service slows one field, not the whole file.</p>
 
-        <!-- SQL error dialog (recreated) -->
-        <div class="error-card" role="img" aria-label="SQL exception error dialog">
-          <div class="error-card__head">
-            <span class="error-card__dot" aria-hidden="true"></span>
-            There was an SQL exception!
-          </div>
-          <p class="error-card__label">Error Details</p>
-          <p class="error-card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
+        <!-- SQL error dialog -->
+        <figure class="asset-slot error-slot" data-caption="SQL exception — error details">
+          <img src="images/sql-error.png" alt="An SQL exception error dialog with error details." />
+        </figure>
 
         <p class="body"><strong>A hard gate before disbursement.</strong> The final step is the exception. Before a loan can be marked ready for disbursement, every required value has to be present, with no bypass. Missing data can be deferred along the way, but never skipped.</p>
       </section>

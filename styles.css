@@ -262,6 +262,9 @@ a { color: inherit; text-decoration: none; }
 .asset-slot.is-missing.diagram--matrix::after { min-height: 420px; }
 .asset-slot.is-missing.diagram--wide::after { min-height: 120px; }
 
+/* Small dialog image — keep it dialog-sized, not full width */
+.error-slot { max-width: 420px; }
+
 /* ============================================================ PERSONA */
 .persona {
   display: grid;
