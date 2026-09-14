@@ -266,6 +266,9 @@ a { color: inherit; text-decoration: none; }
 .diagram--matrix { aspect-ratio: 768 / 630; background: var(--grey-40); }
 .diagram--wide { aspect-ratio: 768 / 158; }
 .asset-slot.is-missing { aspect-ratio: auto; }
+/* When a real image is present, let it define the height (avoids crop/gap
+   when an export's ratio differs slightly from the placeholder box). */
+.asset-slot:has(img) { aspect-ratio: auto; }
 .asset-slot.is-missing.hero__image::after { min-height: 320px; }
 .asset-slot.is-missing.diagram::after { min-height: 240px; }
 .asset-slot.is-missing.diagram--matrix::after { min-height: 420px; }

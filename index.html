@@ -10,12 +10,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sahayya — Reducing loan processing time from 10 days to 4" />
   <meta property="og:description" content="An end-to-end loan origination system for India's self-employed borrowers. A UX case study by Shivam Soni." />
-  <meta property="og:image" content="images/hero.png" />
+  <meta property="og:image" content="assets/img/sahayya/persona-suresh.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
@@ -95,7 +95,7 @@
         <p class="eyebrow">The Customer</p>
 
         <figure class="asset-slot" data-caption="Meet Suresh — the borrower">
-          <img src="images/persona-suresh.png" alt="Meet Suresh — self-employed, steady, and hard to score. A persona card for Sahayya's borrower." />
+          <img src="assets/img/sahayya/persona-suresh.png" alt="Meet Suresh — self-employed, steady, and hard to score. A persona card for Sahayya's borrower." />
         </figure>
 
         <h2 class="section__title">The borrower &mdash; a credit score can&rsquo;t see.</h2>
@@ -107,7 +107,7 @@
         <p class="eyebrow">The Research</p>
 
         <figure class="asset-slot diagram" data-caption="Sahayya — typical loan journey (service blueprint)">
-          <img src="images/research-journey.png" alt="Sahayya typical loan journey — service blueprint diagram" />
+          <img src="assets/img/sahayya/research-journey.png" alt="Sahayya typical loan journey — service blueprint diagram" />
         </figure>
 
         <h2 class="section__title">The process on paper, and the process in the field.</h2>
@@ -143,13 +143,13 @@
         <h2 class="section__title">Keeping thirteen stages in sync.</h2>
 
         <figure class="asset-slot diagram diagram--matrix" data-caption="Stage dependency matrix — 13 × 13, low → high impact">
-          <img src="images/dependency-matrix.png" alt="Stage dependency matrix showing how each stage forces others to reopen" />
+          <img src="assets/img/sahayya/dependency-matrix.png" alt="Stage dependency matrix showing how each stage forces others to reopen" />
         </figure>
 
         <p class="body"><strong>The 13 stages weren&rsquo;t a checklist; they were a web.</strong> Correcting a KYC detail in the first stage could quietly invalidate a credit decision three stages later, and with several people touching a single file, no one could keep track of all those dependencies in their heads.</p>
 
         <figure class="asset-slot diagram diagram--wide" data-caption="The 91 reopen rules — status vs. stage">
-          <img src="images/rules-table.png" alt="Table mapping every stage against every status with reopen rules" />
+          <img src="assets/img/sahayya/rules-table.png" alt="Table mapping every stage against every status with reopen rules" />
         </figure>
 
         <p class="body">So I mapped every stage against every status, 13 by 7, and wrote the rule for each one: when this changes, here is what has to reopen. That came to 91 rules, written one by one. Once they were in the system, it did the remembering. When a change triggered a rule, the affected stage reopened automatically, logged the reason, and notified its owner. Compliance stopped depending on anyone&rsquo;s memory and became part of how the system worked.</p>
@@ -163,7 +163,7 @@
 
         <!-- Asset checks UI -->
         <figure class="asset-slot" data-caption="Asset / Document checks — Aadhaar verification">
-          <img src="images/asset-checks.png" alt="Asset and document checks screen showing Aadhaar verification: field, logged-in value, API value and new value columns." />
+          <img src="assets/img/sahayya/asset-checks.png" alt="Asset and document checks screen showing Aadhaar verification: field, logged-in value, API value and new value columns." />
         </figure>
         <p class="caption">Soft check &mdash; the user marks it here and the application can move ahead.</p>
 
@@ -171,7 +171,7 @@
 
         <!-- SQL error dialog -->
         <figure class="asset-slot error-slot" data-caption="SQL exception — error details">
-          <img src="images/sql-error.png" alt="An SQL exception error dialog with error details." />
+          <img src="assets/img/sahayya/sql-error.png" alt="An SQL exception error dialog with error details." />
         </figure>
 
         <p class="body"><strong>A hard gate before disbursement.</strong> The final step is the exception. Before a loan can be marked ready for disbursement, every required value has to be present, with no bypass. Missing data can be deferred along the way, but never skipped.</p>
@@ -191,6 +191,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

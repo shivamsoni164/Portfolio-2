@@ -178,11 +178,12 @@ body.kf {
   -webkit-overflow-scrolling: touch;
 }
 .kf-strip__item {
-  flex: 0 0 min(88%, 620px);
+  flex: 0 0 auto;
+  height: clamp(240px, 40vw, 380px);
   margin: 0;
-  aspect-ratio: 962 / 390;
   scroll-snap-align: start;
 }
+.kf-strip__item img { width: auto; height: 100%; max-width: none; }
 
 /* ===================================================== STAT TILES */
 .kf-stats {
