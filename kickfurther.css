@@ -12,7 +12,9 @@ body.kf {
 
   /* Kickfurther-specific tokens */
   --grey-900: #111214;
+  --grey-50: #f1f2f3;
   --gray-300: #eeeff4;
+  --kf-purple: #8b3fa3;
   --red-200: #fee5ea;
   --red-700: #ed3355;
   --red-800: #c72850;
@@ -44,10 +46,19 @@ body.kf {
   font-optical-sizing: auto;
 }
 .kf .body {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--grey-600);
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.45;
+  color: var(--grey-500);
 }
+
+/* ---- Sidebar: KF uses uppercase mono nav (Sahayya uses title-case sans) ---- */
+.kf .section-nav__link {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-size: 13px;
+}
+.kf .section-nav__link.is-active { color: var(--grey-900); }
 
 /* ---- Sub-section headings (Ek Mukta Medium 26) ---- */
 .kf-subhead {
@@ -74,33 +85,33 @@ body.kf {
 .kf-card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  background: var(--grey-50);
+  border-radius: 12px;
+  padding: 24px;
 }
 .kf-card__icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(255, 86, 48, 0.12);
-  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--kf-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 auto;
+  color: #fff;
 }
-.kf-card__icon::after {
-  content: "";
-  position: absolute;
-  inset: 11px;
-  border: 2px solid var(--orange-400);
-  border-radius: 4px;
-}
+.kf-card__icon svg { width: 22px; height: 22px; display: block; }
 .kf-card__title {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 19px;
+  font-size: 20px;
   line-height: 1.25;
-  color: var(--grey-800);
+  color: var(--grey-900);
   margin: 0;
 }
 .kf-card__desc {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--grey-500);
   margin: 0;
