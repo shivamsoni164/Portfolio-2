@@ -70,8 +70,18 @@ body.kf {
   margin: 10px 0 20px;
 }
 
-/* ---- The "in the dark" statements: reuse .hmw but not italic ---- */
-.kf .hmw__item { font-style: normal; font-size: 17px; }
+/* ---- The "in the dark" statements: Ek Mukta 22 / grey-700, bold lead-in,
+       subtle grey-40 fill + orange left rule (per Figma) ---- */
+.kf .hmw { gap: 30px; }
+.kf .hmw__item {
+  font-style: normal;
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.45;
+  color: var(--grey-700);
+  background: var(--grey-40);
+  padding: 6px 0 6px 15px;
+}
+.kf .hmw__item strong { color: var(--grey-700); font-weight: 700; }
 
 /* ===================================================== PROMISE CARDS */
 .kf-cards {
