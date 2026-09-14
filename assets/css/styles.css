@@ -6,6 +6,7 @@
 :root {
   /* ---- Colour: grey scale ---- */
   --grey-950: #0c0c0e;
+  --grey-900: #111214;
   --grey-800: #262728;
   --grey-700: #3b3c3e;
   --grey-600: #525355;
@@ -135,13 +136,16 @@ a { color: inherit; text-decoration: none; }
 
 .section-nav { display: flex; flex-direction: column; gap: 12px; }
 .section-nav__link {
-  font-size: 15px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
   color: var(--grey-400);
   transition: color .18s ease;
   width: fit-content;
 }
 .section-nav__link:hover { color: var(--grey-600); }
-.section-nav__link.is-active { color: var(--grey-800); font-weight: 500; }
+.section-nav__link.is-active { color: var(--grey-900); }
 
 /* ---- Content column ---- */
 .content {

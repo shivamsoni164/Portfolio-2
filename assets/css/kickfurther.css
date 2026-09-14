@@ -51,15 +51,6 @@ body.kf {
   color: var(--grey-500);
 }
 
-/* ---- Sidebar: KF uses uppercase mono nav (Sahayya uses title-case sans) ---- */
-.kf .section-nav__link {
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  font-size: 13px;
-}
-.kf .section-nav__link.is-active { color: var(--grey-900); }
-
 /* ---- Sub-section headings (Ek Mukta Medium 26) ---- */
 .kf-subhead {
   font-family: var(--font-sans);
