@@ -540,6 +540,7 @@ a { color: inherit; text-decoration: none; }
   align-items: flex-start;
   gap: var(--gutter);
 }
+.home-rail { flex: 0 0 var(--sidebar-w); }
 .home-content { flex: 1 1 auto; min-width: 0; max-width: var(--content-max); }
 
 .home-hero__title {
@@ -638,5 +639,6 @@ a { color: inherit; text-decoration: none; }
 /* ---- Home responsive ---- */
 @media (max-width: 900px) {
   .home-layout { padding-top: 40px; gap: 0; }
+  .home-rail { display: none; }
   .home-content { max-width: none; }
 }
