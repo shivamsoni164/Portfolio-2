@@ -27,7 +27,7 @@
   --hairline:      rgba(50, 64, 79, 0.10);
 
   /* ---- Type ---- */
-  --font-sans: "Ek Mukta", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-sans: "Mukta", "Ek Mukta", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   /* Serif display face for headings (Fraunces), matching the Figma design */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
