@@ -270,7 +270,7 @@ a { color: inherit; text-decoration: none; }
 .asset-slot.is-missing { aspect-ratio: auto; }
 /* When a real image is present, let it define the height (avoids crop/gap
    when an export's ratio differs slightly from the placeholder box). */
-.asset-slot:has(img) { aspect-ratio: auto; }
+.asset-slot:has(img) { aspect-ratio: auto; border: none; background: transparent; border-radius: 0; }
 .asset-slot.is-missing.hero__image::after { min-height: 320px; }
 .asset-slot.is-missing.diagram::after { min-height: 240px; }
 .asset-slot.is-missing.diagram--matrix::after { min-height: 420px; }
@@ -361,7 +361,7 @@ a { color: inherit; text-decoration: none; }
 .chip--b { bottom: 16px; left: 16px; }
 
 /* =============================================================== HMW */
-.hmw { list-style: none; margin: 32px 0 0; padding: 0; display: flex; flex-direction: column; gap: 28px; }
+.hmw { list-style: none; margin: 22px 0; padding: 0; display: flex; flex-direction: column; gap: 28px; }
 .hmw__item {
   border-left: 2px solid var(--orange-300);
   padding: 2px 0 2px 18px;
