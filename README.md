@@ -6,7 +6,9 @@ frameworks.
 
 ## Pages
 
-- **`index.html`** — *Sahayya*: redesigning an end-to-end loan origination
+- **`index.html`** — home: a short intro and the selected work. Each project
+  block is a single link into its case study.
+- **`sahayya.html`** — *Sahayya*: redesigning an end-to-end loan origination
   system that cut loan processing from 10 days to 4.
 - **`kickfurther.html`** — *Kickfurther*: making an invisible deal-recovery
   process visible to investors, businesses, and the internal team.
@@ -15,7 +17,8 @@ frameworks.
 
 ```
 Portfolio-2/
-├── index.html                 # Sahayya case study (site entry)
+├── index.html                 # Home / selected work (site entry)
+├── sahayya.html               # Sahayya case study
 ├── kickfurther.html           # Kickfurther case study
 ├── assets/
 │   ├── css/

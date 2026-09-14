@@ -525,6 +525,65 @@ a { color: inherit; text-decoration: none; }
 .site-footer__links a { transition: color .18s ease; }
 .site-footer__links a:hover { color: var(--grey-800); }
 
+/* ============================================================== HOME */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.site-nav__links a.is-current { color: var(--orange-400); }
+
+.home-layout {
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 72px var(--page-pad-x) 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gutter);
+}
+.home-rail { flex: 0 0 var(--sidebar-w); }
+.home-content { flex: 1 1 auto; min-width: 0; max-width: var(--content-max); }
+
+.home-hero__title {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(30px, 4.4vw, 45px);
+  line-height: 1.27;
+  letter-spacing: -0.02em;
+  color: var(--grey-700);
+  margin: 0;
+}
+.home-hero__title strong { font-weight: 600; }
+
+.home-divider { border: 0; border-top: 1px solid var(--grey-100); margin: 44px 0; }
+
+/* Whole card is a link to its case study */
+.work-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 72px;
+  border-radius: 12px;
+  outline-offset: 6px;
+}
+.work-card:last-of-type { margin-bottom: 0; }
+.work-card__title {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+  color: var(--grey-800);
+  margin: 0 0 16px;
+  transition: color .2s ease;
+}
+.work-card .hero__subtitle { margin-bottom: 28px; }
+.work-card__media { transition: filter .25s ease; }
+.work-card:hover .work-card__title { color: var(--orange-400); }
+.work-card:hover .work-card__media { filter: brightness(0.985); }
+.work-card:focus-visible { outline: 2px solid var(--orange-400); }
+
 /* ========================================================= ANIMATION */
 .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
 .fade-in.visible { opacity: 1; transform: none; }
@@ -575,4 +634,11 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 400px) {
   .meta { grid-template-columns: 1fr; }
   .site-nav__links { gap: 14px; }
+}
+
+/* ---- Home responsive ---- */
+@media (max-width: 900px) {
+  .home-layout { padding-top: 40px; gap: 0; }
+  .home-rail { display: none; }
+  .home-content { max-width: none; }
 }
