@@ -14,9 +14,10 @@ overwrite the file with the same name.
 | `rules-table.png`       | The 91 reopen-rules table         | `62:2566`  |
 | `asset-checks.png`      | Asset / Document checks UI        | `63:4622`  |
 | `sql-error.png`         | SQL-exception error dialog        | `65:4628`  |
+| `hero.png`              | Hero — Sahayya app (two phone mockups) | `205:2221` |
 
-The hero is a plain tinted block (a placeholder in the source design too);
-drop a `hero.png` into the folder and restore the `<img>` to use a real one.
+> The hero now uses a real image; export node `205:2221` to `hero.png`.
+> Until it's added the hero shows a labelled placeholder.
 
 ## Kickfurther — `assets/img/kickfurther/` (page frame `141:1031`)
 

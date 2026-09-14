@@ -35,15 +35,16 @@ Portfolio-2/
 
 Shared tokens are CSS custom properties in `:root` (`assets/css/styles.css`):
 grey scale (`--grey-40` … `--grey-950`), orange accent (`--orange-400`),
-blue, and a `--font-display` token so a page can swap its heading face.
+blue, and font tokens (`--font-display`, `--font-sans`, `--font-mono`).
 
-- **Sahayya** — [Geist](https://fonts.google.com/specimen/Geist) +
-  [Geist Mono](https://fonts.google.com/specimen/Geist+Mono) (stand-ins for
-  the design's licensed *Apercu Pro / Apercu Mono*).
-- **Kickfurther** — [Fraunces](https://fonts.google.com/specimen/Fraunces)
-  (serif display) + [Ek Mukta](https://fonts.google.com/specimen/Ek+Mukta)
-  body + mono labels, via `assets/css/kickfurther.css` overriding the shared
-  font tokens.
+Both pages use the same type system from the Figma design:
+[Fraunces](https://fonts.google.com/specimen/Fraunces) (serif display) for
+headings, [Ek Mukta](https://fonts.google.com/specimen/Ek+Mukta) for body,
+and [Geist Mono](https://fonts.google.com/specimen/Geist+Mono) for labels
+(a free stand-in for the design's licensed *Apercu Mono Pro*).
+`assets/css/kickfurther.css` adds only Kickfurther-specific components
+(promise cards, the compliance/alert widget, stat tiles) and a couple of
+tone tweaks.
 
 Both pages share the layout: sticky top nav, sticky left section-nav
 sidebar with scroll-spy, and a 768px content column.
