@@ -605,16 +605,19 @@ a { color: inherit; text-decoration: none; }
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
+/* Homepage has no sidebar, so its content is a single column centred on
+   the page (not offset by an empty rail like the case-study layout). */
 .home-layout {
-  max-width: var(--wrap-max);
+  max-width: calc(var(--content-max) + var(--page-pad-x) * 2);
   margin: 0 auto;
   padding: 72px var(--page-pad-x) 40px;
-  display: flex;
-  align-items: flex-start;
-  gap: var(--gutter);
 }
-.home-rail { flex: 0 0 var(--sidebar-w); }
-.home-content { flex: 1 1 auto; min-width: 0; max-width: var(--content-max); }
+.home-rail { display: none; }
+.home-content { min-width: 0; max-width: none; }
+
+/* Centre the shared nav on the homepage so it lines up with that column */
+.home .site-nav__rail { display: none; }
+.home .site-nav__col { margin: 0 auto; }
 
 .home-hero__title {
   font-family: var(--font-display);
