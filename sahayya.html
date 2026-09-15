@@ -26,10 +26,16 @@
         <span class="brand__name">Shivam Soni</span>
         <span class="brand__role">Product Designer</span>
       </a>
-      <nav class="site-nav__links" aria-label="Primary">
-        <a href="index.html">Work</a>
-        <a href="#">About</a>
-        <a href="#">Resume</a>
+      <nav class="site-nav__nav" aria-label="Primary">
+        <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+          <span>Work</span>
+          <svg class="site-nav__caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </button>
+        <div class="site-nav__links" id="nav-menu">
+          <a href="index.html" class="is-current">Work</a>
+          <a href="#">About</a>
+          <a href="#">Resume</a>
+        </div>
       </nav>
     </div>
   </header>
