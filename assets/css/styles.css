@@ -979,3 +979,72 @@ body.kf {
   .kf-stats { grid-template-columns: 1fr; }
   .kf-strip__item { flex-basis: 92%; }
 }
+
+
+/* =====================================================================
+   About page (Figma node 236:2569) — centred column, photo bento,
+   display heading + body. Reuses .home-layout / .home-content centring.
+   ===================================================================== */
+body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
+
+.about-stack { display: flex; flex-direction: column; gap: 44px; width: 100%; }
+.about-divider { border: 0; border-top: 1px solid var(--hairline); margin: 0; width: 100%; }
+
+/* Photo bento — 768 × 428, two rows of three (widths per Figma). */
+.about-bento {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  aspect-ratio: 768 / 428;
+}
+.about-bento__row { display: flex; gap: 16px; flex: 1 1 0; min-height: 0; }
+.about-bento__cell {
+  position: relative;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0;
+}
+.about-bento__cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Flex-grow ratios reproduce the exact column widths at 768 and scale down. */
+.about-bento__row--1 .about-bento__cell:nth-child(1) { flex: 187 0 0; }
+.about-bento__row--1 .about-bento__cell:nth-child(2) { flex: 231 0 0; }
+.about-bento__row--1 .about-bento__cell:nth-child(3) { flex: 318 0 0; }
+.about-bento__row--2 .about-bento__cell:nth-child(1) { flex: 299 0 0; }
+.about-bento__row--2 .about-bento__cell:nth-child(2) { flex: 133 0 0; }
+.about-bento__row--2 .about-bento__cell:nth-child(3) { flex: 304 0 0; }
+/* Keep the missing-image placeholder filling its cell until photos are added */
+.about-bento__cell.is-missing { aspect-ratio: auto; }
+.about-bento__cell.is-missing::after { min-height: 100%; }
+
+.about-text { display: flex; flex-direction: column; gap: 32px; width: 100%; }
+.about-heading {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: clamp(32px, 4.8vw, 48px);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  color: var(--grey-800);
+  margin: 0;
+}
+.about-body p {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.45;
+  color: var(--grey-500);
+  margin: 0 0 32px;
+}
+.about-body p:last-child { margin-bottom: 0; }
+.about-body ul { margin: 0; padding-left: 26px; list-style: disc; }
+.about-body li {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.45;
+  color: var(--grey-500);
+}
+
+@media (max-width: 640px) {
+  .about-bento { aspect-ratio: auto; }
+  .about-bento__row { height: 150px; flex: 0 0 auto; }
+}
