@@ -47,11 +47,6 @@
   --blue-10:    #f5f5fe;
   --error:      #ff5630;      /* SQL-error dialog (semantic red) */
   --success:    #1f8a4c;      /* "mandatory/positive" status pill */
-  /* Browser-window chrome for the homepage laptop mockups (Figma values) */
-  --mac-bar:   #f2f2f5;
-  --mac-close: #f3605c;
-  --mac-min:   #f8be39;
-  --mac-max:   #50c845;
 
   /* ---- Surfaces ---- */
   --bg:            #ffffff;
@@ -742,31 +737,14 @@ a { color: inherit; text-decoration: none; }
 .hp-case:hover .hp-case__title { color: var(--accent); }
 .hp-case:focus-visible { outline: 2px solid var(--accent); }
 
-/* ---- MacBook browser mockup ---- */
+/* ---- Case media (single browser-mockup image supplied by the designer) ---- */
 .hp-case__media { flex: 900 1 0; min-width: 0; margin: 0; }
-.macbook {
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
-}
-.macbook__bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  height: 28px;
-  padding: 0 12px;
-  background: var(--mac-bar);
-}
-.macbook__dot { width: 9px; height: 9px; border-radius: 50%; display: block; flex: 0 0 auto; }
-.macbook__dot--close { background: var(--mac-close); }
-.macbook__dot--min   { background: var(--mac-min); }
-.macbook__dot--max   { background: var(--mac-max); }
-.macbook__screen { display: block; margin: 0; border: 0; border-radius: 0; background: var(--grey-100); }
-.macbook__screen.asset-slot { aspect-ratio: 1600 / 1000; }
-.macbook__screen.is-missing::after { min-height: 200px; }
-.macbook__shot { display: block; width: 100%; height: auto; }
+.hp-case__media.asset-slot { border: 0; border-radius: 0; background: transparent; }
+.hp-case__media.asset-slot:not(.is-missing) { aspect-ratio: auto; }
+.hp-case__media img { width: 100%; height: auto; display: block; }
+/* Placeholder box until the mockup image is uploaded */
+.hp-case__media.is-missing { aspect-ratio: 1600 / 1000; background: var(--grey-100); }
+.hp-case__media.is-missing::after { min-height: 200px; }
 
 /* Stack to a single column on tablet + mobile; laptop mockup goes on top */
 @media (max-width: 1279px) {
