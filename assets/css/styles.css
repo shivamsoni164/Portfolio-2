@@ -632,7 +632,8 @@ a { color: inherit; text-decoration: none; }
    with the content edges at full width. */
 .hp .site-nav__rail { display: none; }
 .hp .site-nav__col { max-width: none; }
-.hp .site-nav__inner { max-width: calc(1602px + var(--page-pad-x) * 2); }
+.hp .site-nav__inner,
+.hp .site-footer__inner { max-width: calc(1602px + var(--page-pad-x) * 2); }
 
 .hp-main {
   max-width: calc(1602px + var(--page-pad-x) * 2);
