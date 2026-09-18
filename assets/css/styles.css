@@ -752,10 +752,13 @@ a { color: inherit; text-decoration: none; }
 
 /* Stack to a single column on tablet + mobile; laptop mockup goes on top */
 @media (max-width: 1279px) {
+  /* Stacked column: reset the desktop flex ratios (flex-basis:0 would collapse
+     the height of each item — notably the mockup image — to 0 in a column). */
   .hp-hero { flex-direction: column; align-items: flex-start; gap: 30px; padding-bottom: 0; }
+  .hp-hero__title, .hp-hero__intro { flex: 0 0 auto; width: 100%; }
   .hp-case { flex-direction: column; gap: 24px; }
-  .hp-case__text { width: 100%; }
-  .hp-case__media { width: 100%; order: -1; }
+  .hp-case__text { flex: 0 0 auto; width: 100%; }
+  .hp-case__media { flex: 0 0 auto; width: 100%; order: -1; }
   .hp-work { gap: 44px; }
 }
 @media (max-width: 640px) {
