@@ -627,9 +627,12 @@ a { color: inherit; text-decoration: none; }
    a text column with a MacBook browser mockup. Two-column >=1280px,
    single-column stack below (tablet + mobile).
    ===================================================================== */
-/* Full-width nav on the homepage (no sidebar rail; not the centred About nav) */
+/* Full-width nav on the homepage (no sidebar rail; not the centred About nav).
+   The nav wrap matches the homepage content wrap so the brand + links line up
+   with the content edges at full width. */
 .hp .site-nav__rail { display: none; }
 .hp .site-nav__col { max-width: none; }
+.hp .site-nav__inner { max-width: calc(1602px + var(--page-pad-x) * 2); }
 
 .hp-main {
   max-width: calc(1602px + var(--page-pad-x) * 2);
@@ -718,8 +721,8 @@ a { color: inherit; text-decoration: none; }
   color: var(--grey-700);
   margin: 0;
 }
-.hp-meta { display: flex; flex-wrap: wrap; gap: 16px 16px; margin: 0; }
-.hp-meta__col { display: flex; flex-direction: column; gap: 8px; flex: 0 0 auto; min-width: 140px; }
+.hp-meta { display: flex; flex-wrap: wrap; gap: 16px; margin: 0; }
+.hp-meta__col { display: flex; flex-direction: column; gap: 8px; flex: 0 0 auto; width: 180px; }
 .hp-meta__col dt {
   font-family: var(--font-mono);
   font-size: clamp(12px, 1vw, 16px);
@@ -753,6 +756,10 @@ a { color: inherit; text-decoration: none; }
   .hp-case__text { width: 100%; }
   .hp-case__media { width: 100%; order: -1; }
   .hp-work { gap: 44px; }
+}
+@media (max-width: 640px) {
+  /* Meta columns shrink so Role + Timeline still sit side by side on phones */
+  .hp-meta__col { width: auto; min-width: 108px; }
 }
 
 /* ========================================================= ANIMATION */
