@@ -880,9 +880,11 @@ body.kf {
   font-optical-sizing: auto;
 }
 .kf .hero__subtitle {
-  font-size: clamp(19px, 2.2vw, 22px);
-  line-height: 1.45;
-  color: var(--grey-400);
+  font-family: var(--font-body);      /* Sora Regular (Figma hero subtitle) */
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--grey-700);             /* Figma grey/700 #434343 */
   max-width: 680px;
 }
 .kf .section__title {
