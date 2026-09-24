@@ -1101,6 +1101,9 @@ body.kf {
 /* Full-width top nav on case-study pages (brand hard-left, links hard-right) */
 .cs .site-nav__rail { display: none; }
 .cs .site-nav__col  { max-width: none; }
+/* End-to-end: let the bar's content span the whole page width (60px gutters),
+   not the centred 1200px wrap — matches the Figma nav frame. */
+.cs .site-nav__inner { max-width: none; }
 
 /* Introduction marketplace diagram */
 .kf .diagram--intro { aspect-ratio: 848 / 372; }
