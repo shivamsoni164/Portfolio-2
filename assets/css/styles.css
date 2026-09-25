@@ -1162,6 +1162,9 @@ body.kf {
 }
 .kf .sidebar { width: auto; }        /* fills col 1 (fluid) */
 .kf .content { max-width: none; }    /* fills col 2 (fluid) */
+/* Body copy fills the full content column edge-to-edge, like the images
+   (Figma body nodes span the whole column). */
+.kf .body { max-width: none; }
 
 @media (max-width: 900px) {
   .kf .layout { grid-template-columns: 1fr; gap: 0; }   /* stack on tablet/mobile */
