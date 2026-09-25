@@ -198,7 +198,8 @@ a { color: inherit; text-decoration: none; }
 .sidebar__back {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 16px;
+  line-height: 22.5px;
   text-transform: uppercase;
   letter-spacing: .06em;
   color: var(--grey-500);
@@ -210,7 +211,8 @@ a { color: inherit; text-decoration: none; }
 .section-nav { display: flex; flex-direction: column; gap: 12px; }
 .section-nav__link {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 16px;
+  line-height: 22.5px;
   text-transform: uppercase;
   letter-spacing: .04em;
   color: var(--grey-400);
@@ -870,7 +872,7 @@ body.kf {
 }
 
 /* ---- Type tuning for the serif/sans pairing ---- */
-.kf .eyebrow { font-size: 16px; line-height: 22.5px; color: var(--grey-600); }  /* Figma "Mono 16" */
+.kf .eyebrow { font-size: 16px; line-height: 22.5px; color: var(--grey-500); }  /* Figma "Mono 16", Grey/500 */
 
 .kf .hero__title {
   font-weight: 400;
@@ -1119,8 +1121,8 @@ body.kf {
   -webkit-overflow-scrolling: touch;
 }
 .kf .kf-scroll:has(img) {
-  border: 1px solid var(--grey-200);
-  border-radius: 10px;
+  border: 1px solid var(--grey-300);   /* Figma image frame */
+  border-radius: 11px;
   background: var(--grey-40);
 }
 .kf .kf-scroll img {
@@ -1144,6 +1146,41 @@ body.kf {
   .kf .kf-duo { flex-direction: column; }
   .kf .kf-scroll img { height: 260px; }
 }
+
+/* ---------------------------------------------------------------------
+   Kickfurther revised layout (Figma) — fractional 3-column grid,
+   framed images, investor gallery. Max page width 1722px.
+   --------------------------------------------------------------------- */
+
+/* Main is now a 3-col grid: sidebar 0.25fr | content 1fr | empty 0.25fr */
+.kf .layout {
+  max-width: 1722px;
+  display: grid;
+  grid-template-columns: 0.25fr 1fr 0.25fr;
+  gap: 32px;
+  align-items: start;
+}
+.kf .sidebar { width: auto; }        /* fills col 1 (fluid) */
+.kf .content { max-width: none; }    /* fills col 2 (fluid) */
+
+@media (max-width: 900px) {
+  .kf .layout { grid-template-columns: 1fr; gap: 0; }   /* stack on tablet/mobile */
+}
+
+/* Framed images — 1px Grey/300 border + 11px radius (Figma) */
+.kf .asset-slot:has(img) {
+  border: 1px solid var(--grey-300);
+  border-radius: 11px;
+  overflow: hidden;
+  background: transparent;
+  aspect-ratio: auto;
+}
+/* wide scroll maps keep their frame but stay horizontally scrollable */
+.kf .kf-scroll:has(img) { overflow-x: auto; overflow-y: hidden; }
+
+/* Investor gallery (single combined image) */
+.kf .kf-gallery { margin: 8px 0 32px; }
+.kf .asset-slot.is-missing.kf-gallery::after { min-height: 480px; }
 
 
 /* =====================================================================
