@@ -870,7 +870,7 @@ body.kf {
 }
 
 /* ---- Type tuning for the serif/sans pairing ---- */
-.kf .eyebrow { font-size: 15px; color: var(--grey-600); }
+.kf .eyebrow { font-size: 16px; line-height: 22.5px; color: var(--grey-600); }  /* Figma "Mono 16" */
 
 .kf .hero__title {
   font-weight: 400;
@@ -923,7 +923,7 @@ body.kf {
   line-height: 26px;
   color: var(--grey-600);
   background: var(--grey-100);
-  border-left: 2px solid #ff910a;      /* Figma tangy-orange/500 */
+  border-left: 2px solid var(--tangy-500);   /* Figma Tangy Orange/500 #ff910a */
   padding: 6px 15px;
 }
 .kf .hmw__item strong { color: var(--grey-700); font-weight: 700; }
