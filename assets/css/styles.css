@@ -1144,6 +1144,9 @@ body.kf {
 
 @media (max-width: 640px) {
   .kf .kf-duo { flex-direction: column; }
+  /* In a column, flex-basis:0 collapses the items to ~0 height (and the
+     framed overflow:hidden then clips the image away) — reset to content height. */
+  .kf .kf-duo__item { flex: 0 0 auto; }
   .kf .kf-scroll img { height: 260px; }
 }
 
