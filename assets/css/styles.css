@@ -1148,6 +1148,8 @@ body.kf {
      framed overflow:hidden then clips the image away) — reset to content height. */
   .kf .kf-duo__item { flex: 0 0 auto; }
   .kf .kf-scroll img { height: 260px; }
+  /* Hide the case-study side nav (Back + section links) on mobile only */
+  .cs .sidebar { display: none; }
 }
 
 /* ---------------------------------------------------------------------
