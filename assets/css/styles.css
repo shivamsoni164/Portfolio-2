@@ -889,7 +889,7 @@ body.kf {
   font-size: 24px;
   line-height: 32px;
   color: var(--grey-700);             /* Figma grey/700 #434343 */
-  max-width: 680px;
+  max-width: none;                    /* fill the content column, like the body copy */
 }
 .kf .section__title {
   font-weight: 400;
