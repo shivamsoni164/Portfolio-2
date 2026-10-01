@@ -1297,12 +1297,31 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
   width: 100%;
 }
 
-/* ---- Image + text split (The customer, Solution 02 blocks) --------- */
+/* ---- Figma image treatment --------------------------------------- *
+ * Every screenshot sits on a soft grey panel with the image inset,
+ * square corners and no stroke (overrides the kit's framed-image rule). */
+.sa .sa-shot:has(img) {
+  background: var(--grey-100);
+  border: 0;
+  border-radius: 0;
+  padding: 25px;
+}
+.sa .sa-split__media:has(img) {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* ---- Image + text split (The customer, Solution 02 blocks) --------- *
+ * The grey panel spans the whole row; image left, text vertically
+ * centred on the right. */
 .sa .sa-split {
   display: flex;
   gap: 40px;
-  align-items: flex-start;
+  align-items: center;
   margin: 8px 0 32px;
+  background: var(--grey-100);
+  padding: 30px;
 }
 .sa .sa-split__media { flex: 1 1 0; min-width: 0; margin: 0; }
 .sa .sa-split__text  { flex: 1 1 0; min-width: 0; }
@@ -1311,6 +1330,9 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
 
 /* ---- Full-width screenshots --------------------------------------- */
 .sa .asset-slot.is-missing.sa-shot::after { min-height: 300px; }
+
+/* ---- HMW bars: tighter spacing (match Figma) ---------------------- */
+.sa .hmw { gap: 16px; }
 
 /* ---- Four-bucket list (Solution 01) ------------------------------- */
 .sa .sa-defs {
@@ -1372,9 +1394,10 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
 }
 
 @media (max-width: 860px) {
-  .sa .sa-split { flex-direction: column; gap: 24px; }
+  .sa .sa-split { flex-direction: column; gap: 24px; align-items: stretch; }
   .sa .sa-lessons { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 640px) {
   .sa .sa-note__num, .sa .sa-lesson__num { font-size: 46px; }
+  .sa .sa-split, .sa .sa-shot:has(img) { padding: 16px; }
 }
