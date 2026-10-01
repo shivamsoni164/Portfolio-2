@@ -189,12 +189,10 @@
 
         <p class="body">The goal was simple: let the agent confirm data, not type it. But before deciding what to automate, I had to know what we were collecting and where each piece actually lived. So my product manager and I sorted every input by its source, and it fell into four buckets.</p>
 
-        <ul class="sa-defs">
-          <li><strong>Identity</strong> &mdash; the borrower uploads a PAN (India&rsquo;s PPSN) or driving licence, it&rsquo;s verified by an OTP to their registered mobile, and the details flow straight into the form. Verified, not typed.</li>
-          <li><strong>Bank statements</strong> &mdash; digital and machine-readable, so they could be fetched and processed automatically, without an agent keying a single figure.</li>
-          <li><strong>Credit score</strong> &mdash; digital too, but gated. It needed the borrower&rsquo;s consent to release, and once requested it took around 40 to 45 minutes to come back.</li>
-          <li><strong>Collateral</strong> &mdash; the one that stayed on paper. Property documents were scanned and uploaded, with OCR lifting the details off the page.</li>
-        </ul>
+        <p class="body"><strong>Identity</strong> &ndash; the borrower uploads a PAN (India&rsquo;s PPSN) or driving licence, it&rsquo;s verified by an OTP to their registered mobile, and the details flow straight into the form. Verified, not typed.</p>
+        <p class="body"><strong>Bank statements</strong> &ndash; digital and machine-readable, so they could be fetched and processed automatically, without an agent keying a single figure.</p>
+        <p class="body"><strong>Credit score</strong> &ndash; digital too, but gated. It needed the borrower&rsquo;s consent to release, and once requested it took around 40 to 45 minutes to come back.</p>
+        <p class="body"><strong>Collateral</strong> &ndash; the one that stayed on paper. Property documents were scanned and uploaded, with OCR lifting the details off the page.</p>
 
         <p class="body">The pattern was clear: wherever data already lived in a trusted source, the agent should confirm it, not re-enter it. Fields that could be inferred filled themselves too, a pincode bringing in its city and state, the agent&rsquo;s branch and manager already set. Every field we pulled or inferred was one less chance for an error, and one less thing slowing the file down.</p>
         <p class="body">But three of those buckets came with a catch. Identity, bank statements and the credit score all leaned on outside services, and the credit score alone could take the better part of an hour. The loan now moved only as fast as data we didn&rsquo;t control.</p>
