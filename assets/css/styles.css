@@ -1281,3 +1281,132 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
   .about-bento { gap: 8px; }
   .about-divider { display: none; }
 }
+
+/* =====================================================================
+   Sahayya case study (Figma node 534:6485) — reuses the Kickfurther kit
+   (body.kf) and adds: a shader hero stage, image+text splits, numbered
+   notes, a four-bucket list, and a two-up "what I learned" grid.
+   Scoped to body.sa.
+   ===================================================================== */
+
+/* Thin section divider (Figma "Line 1" after Scope) */
+.sa .sa-rule {
+  border: 0;
+  border-top: 1px solid var(--grey-200);
+  margin: 8px 0 56px;
+  width: 100%;
+}
+
+/* ---- Hero stage: grey "Moving gradient" behind the laptop ---------- */
+.sa .sa-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1053 / 711;
+  margin: 8px 0 40px;
+  border: 1px solid var(--grey-300);
+  border-radius: 11px;
+  overflow: hidden;
+  /* static fallback / placeholder until the animated shader is wired in */
+  background: linear-gradient(120deg, var(--grey-300) 0%, var(--grey-100) 50%, var(--grey-200) 100%);
+}
+.sa .sa-hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.sa .sa-hero__device {
+  position: relative;
+  z-index: 1;
+  width: 42%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, .18));
+}
+
+/* ---- Image + text split (The customer, Solution 02 blocks) --------- */
+.sa .sa-split {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin: 8px 0 32px;
+}
+.sa .sa-split__media { flex: 1 1 0; min-width: 0; margin: 0; }
+.sa .sa-split__text  { flex: 1 1 0; min-width: 0; }
+.sa .sa-split__text .body:last-child { margin-bottom: 0; }
+.sa .asset-slot.is-missing.sa-split__media::after { min-height: 320px; }
+
+/* ---- Full-width screenshots --------------------------------------- */
+.sa .asset-slot.is-missing.sa-shot::after { min-height: 300px; }
+
+/* ---- Four-bucket list (Solution 01) ------------------------------- */
+.sa .sa-defs {
+  list-style: none;
+  margin: 4px 0 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sa .sa-defs li {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--grey-700);
+  padding-left: 18px;
+  border-left: 2px solid var(--grey-300);
+}
+.sa .sa-defs strong { color: var(--grey-800); font-weight: 600; }
+
+/* ---- Big serif number for numbered notes -------------------------- */
+.sa .sa-note__num {
+  display: block;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--grey-300);
+  margin-bottom: 14px;
+}
+
+/* ---- "What I learned" — two-up grid ------------------------------- */
+.sa .sa-lessons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 8px;
+}
+.sa .sa-lesson__num {
+  display: block;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--grey-300);
+  margin-bottom: 20px;
+}
+.sa .sa-lesson__title {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--grey-800);
+  margin: 0 0 10px;
+}
+
+@media (max-width: 860px) {
+  .sa .sa-split { flex-direction: column; gap: 24px; }
+  .sa .sa-lessons { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 640px) {
+  .sa .sa-hero__device { width: 70%; }
+  .sa .sa-note__num, .sa .sa-lesson__num { font-size: 46px; }
+}
