@@ -1374,6 +1374,8 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
 
 @media (max-width: 860px) {
   .sa .sa-split { flex-direction: column; gap: 24px; align-items: stretch; }
+  /* stacked: size to content so the image doesn't collapse to a strip */
+  .sa .sa-split__media, .sa .sa-split__text { flex: 0 0 auto; }
   .sa .sa-lessons { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 640px) {
