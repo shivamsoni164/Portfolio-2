@@ -1327,6 +1327,9 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
 .sa .sa-split__text .body:last-child { margin-bottom: 0; }
 .sa .asset-slot.is-missing.sa-split__media::after { min-height: 320px; }
 
+/* ---- Hero image: square corners, no stroke (Figma) ---------------- */
+.sa .hero__image:has(img) { border: 0; border-radius: 0; }
+
 /* ---- Full-width screenshots --------------------------------------- */
 .sa .asset-slot.is-missing.sa-shot::after { min-height: 300px; }
 
