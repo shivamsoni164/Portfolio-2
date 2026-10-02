@@ -1352,7 +1352,7 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  margin-top: 8px;
+  margin-top: 24px;
 }
 .sa .sa-lesson__num {
   display: block;
@@ -1361,7 +1361,7 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
   font-size: 56px;
   line-height: 1;
   color: var(--grey-900);
-  margin-bottom: 20px;
+  margin-bottom: 36px;
 }
 .sa .sa-lesson__title {
   font-family: var(--font-body);
