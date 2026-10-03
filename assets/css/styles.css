@@ -1330,14 +1330,15 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
 /* ---- Hero stage: animated shader gradient + laptop mockup ---------- *
  * Container clips the canvas; mockup (transparent PNG) sits on top so the
  * moving gradient shows around and behind it. Square corners (match Figma).
- * aspect-ratio matches the mockup so the laptop lands exactly as before. */
-.sa .sa-hero-stage {
+ * aspect-ratio matches the mockup so the laptop lands exactly as before.
+ * Un-scoped so it works in the Sahayya hero AND the home Sahayya card. */
+.sa-hero-stage {
   position: relative;
   overflow: hidden;
   aspect-ratio: 2051 / 1426;
   margin: 8px 0 40px;
 }
-.sa .sa-hero-stage__canvas {
+.sa-hero-stage__canvas {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1346,16 +1347,18 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
   display: block;
   pointer-events: none;                 /* never blocks clicks */
   /* Fallback shown until WebGPU starts, and if it's unsupported.
-     Uses the site's real greys (Grey/300, Grey/100, Grey/200). */
-  background: linear-gradient(135deg, var(--grey-300) 0%, var(--grey-100) 50%, var(--grey-200) 100%);
+     Matches the Figma gradient palette. */
+  background: linear-gradient(135deg, #d7ddef 0%, #f5f5f5 50%, #d1cbfd 100%);
 }
-.sa .sa-hero-stage__mockup {
+.sa-hero-stage__mockup {
   position: relative;
   z-index: 1;
   display: block;
   width: 100%;
   height: auto;                         /* preserve aspect; no distortion */
 }
+/* In the home project card the stage has no extra vertical margin. */
+.hp-case__media .sa-hero-stage { margin: 0; }
 
 /* ---- Full-width screenshots --------------------------------------- */
 .sa .asset-slot.is-missing.sa-shot::after { min-height: 300px; }

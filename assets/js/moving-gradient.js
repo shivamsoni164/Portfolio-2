@@ -23,12 +23,12 @@ const SETTINGS = {
   material: 0,            // 0 = None
   gradientBalance: 45,    // "Color balance", %
   gradientMethod: 0,      // 0 = Height
-  // Gradient stops = the site's real Figma greys:
-  // Grey/300, Grey/100, Grey/200 (confirmed values for this project).
+  // Gradient stops from the Figma "Edit gradient" panel.
+  // `alpha` is the stop's opacity (two stops are at 50%).
   stops: [
-    { position: 0.0, hex: '#d6d6d6' }, // Grey/300
-    { position: 0.5, hex: '#f5f5f5' }, // Grey/100
-    { position: 1.0, hex: '#e6e6e6' }, // Grey/200
+    { position: 0.10, hex: '#d7ddef', alpha: 0.5 }, // 10%, 50% opacity
+    { position: 0.50, hex: '#f5f5f5', alpha: 1.0 }, // 50%, Grey/100, full opacity
+    { position: 1.00, hex: '#d1cbfd', alpha: 0.5 }, // 100%, 50% opacity
   ],
 };
 
@@ -777,7 +777,7 @@ export async function initMovingGradient(container) {
   const backdropBindGroup = device.createBindGroup({ layout: backdropPipeline.getBindGroupLayout(0), entries: [{ binding: 0, resource: { buffer: uniformBuf } }] });
 
   // Static uniforms (everything except time and aspect)
-  const stops = SETTINGS.stops.map(s => ({ position: s.position, color: hexToRgb(s.hex) }));
+  const stops = SETTINGS.stops.map(s => ({ position: s.position, color: { ...hexToRgb(s.hex), a: (s.alpha ?? 1) } }));
   const stopCount = Math.min(8, stops.length);
   stops.slice(0, stopCount).forEach((s, i) => {
     U.set([s.color.r, s.color.g, s.color.b, s.color.a], 4 + i * 4);

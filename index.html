@@ -84,8 +84,14 @@
               <div class="hp-meta__col"><dt>Skills</dt><dd>User Research<br />UX Design<br />Service Design</dd></div>
             </dl>
           </div>
-          <figure class="hp-case__media asset-slot" data-caption="Sahayya loan-origination app mockup">
-            <img src="assets/img/sahayya/hero-laptop.png" alt="Sahayya loan-origination app shown on a laptop, over a soft grey gradient" />
+          <figure class="hp-case__media">
+            <!-- Animated "Moving gradient" shader behind the transparent laptop mockup -->
+            <div class="sa-hero-stage" data-moving-gradient>
+              <canvas class="sa-hero-stage__canvas" aria-hidden="true"></canvas>
+              <img class="sa-hero-stage__mockup" src="assets/img/sahayya/hero-mockup.png"
+                   width="2051" height="1426"
+                   alt="Sahayya loan-origination app shown on a laptop" />
+            </div>
           </figure>
         </a>
 
@@ -124,5 +130,6 @@
   </footer>
 
   <script src="assets/js/main.js?v=20261002"></script>
+  <script type="module" src="assets/js/moving-gradient.js?v=20261002"></script>
 </body>
 </html>
