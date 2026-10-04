@@ -725,13 +725,13 @@ a { color: inherit; text-decoration: none; }
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
   background-position: 0 90%;
-  background-size: 0 1px;
+  background-size: 0 1.5px;
   transition: background-size 0.583s cubic-bezier(0.16, 1, 0.2, 1);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
 .hp-case:hover .hp-case__title-u,
-.hp-case:focus-visible .hp-case__title-u { background-size: 100% 1px; }
+.hp-case:focus-visible .hp-case__title-u { background-size: 100% 1.5px; }
 @media (prefers-reduced-motion: reduce) {
   .hp-case__title-u { transition: none; }
 }
