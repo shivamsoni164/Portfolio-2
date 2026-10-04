@@ -717,7 +717,23 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.01em;
   color: var(--grey-900);
   margin: 0;
-  transition: color .2s ease;
+}
+/* Hover "underline reveal" on the inline title span (background-image technique,
+   not text-decoration). currentColor matches the text; box-decoration-break keeps
+   the underline continuous per line when the title wraps. */
+.hp-case__title-u {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 90%;
+  background-size: 0 1px;
+  transition: background-size 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hp-case:hover .hp-case__title-u,
+.hp-case:focus-visible .hp-case__title-u { background-size: 100% 1px; }
+@media (prefers-reduced-motion: reduce) {
+  .hp-case__title-u { transition: none; }
 }
 .hp-case__subtitle {
   font-family: var(--font-body);
@@ -742,7 +758,6 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.33;
   color: var(--grey-400);
 }
-.hp-case:hover .hp-case__title { color: var(--accent); }
 .hp-case:focus-visible { outline: 2px solid var(--accent); }
 
 /* ---- Case media (single browser-mockup image supplied by the designer) ---- */
