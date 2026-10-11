@@ -1551,3 +1551,8 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
   .ag-card__title { font-size: 20px; }
   .ag .sa-shot:has(img) { padding: 16px; }
 }
+
+/* Hero video (silent autoplay loop): fills the Figma 1025 x 713 slot, cropped to fit */
+.ag .hero__image:has(video) { border: 0; border-radius: 0; background: transparent; }
+.hero__video { display: block; width: 100%; aspect-ratio: 1025 / 713; object-fit: cover; }
+.asset-slot.is-missing video { display: none; }

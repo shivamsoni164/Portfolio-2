@@ -24,6 +24,41 @@
     img.addEventListener("error", markMissing);
   });
 
+  /* ---------- 1b. Looping hero video ------------------------------- */
+  // Silent autoplay loops: fall back to the labelled placeholder if the file is
+  // missing, show only the poster for reduced-motion users, and pause the video
+  // while it is off-screen to save battery.
+  document.querySelectorAll(".asset-slot video").forEach(function (video) {
+    var slot = video.closest(".asset-slot");
+    function markMissing() { slot.classList.add("is-missing"); }
+
+    // "error" fires on the last <source> only when every source has failed.
+    var sources = video.querySelectorAll("source");
+    if (sources.length) sources[sources.length - 1].addEventListener("error", markMissing);
+    video.addEventListener("error", markMissing);
+    // The failure can happen before this script runs (so the event is missed):
+    // NETWORK_NO_SOURCE (3) means no source could be loaded.
+    function checkSource() { if (video.networkState === 3) markMissing(); }
+    checkSource();
+    window.addEventListener("load", checkSource);
+
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) { video.removeAttribute("autoplay"); video.pause(); return; }
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var played = video.play();
+            if (played && played.catch) played.catch(function () {});
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.1 }).observe(video);
+    }
+  });
+
   /* ---------- 2. Fade-in on scroll -------------------------------- */
   var faders = document.querySelectorAll(".section, .persona, .ui-card, .error-card");
   faders.forEach(function (el) { el.classList.add("fade-in"); });
