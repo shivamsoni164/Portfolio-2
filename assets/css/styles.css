@@ -1440,3 +1440,114 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
   .sa .sa-note__num, .sa .sa-lesson__num { font-size: 46px; }
   .sa .sa-split__media:has(img), .sa .sa-shot:has(img) { padding: 16px; }
 }
+
+
+/* =====================================================================
+   Agentic Design Systems (Figma node 728:6952) — reuses the case-study kit
+   (body.kf) and the grey-panel screenshots (.sa-shot). Adds the Setup cards
+   and the 3-up Impact block. Scoped to body.ag so no other page is affected.
+   Spacing follows the Figma frame: 60px between sections, 30px body leading.
+   ===================================================================== */
+
+/* Section rhythm: 60px gap. flow-root keeps a panel's bottom margin inside the
+   section (Figma: 20px panel padding + 60px gap = 80px before the next title). */
+.ag .section { margin-bottom: 60px; display: flow-root; }
+.ag .section:last-child { margin-bottom: 0; }
+
+/* Body copy: Sora Light 18 / 30 (Figma "Body Regular 22") */
+.ag .body { line-height: 30px; margin: 0 0 20px; }
+
+/* Hero header (Figma): eyebrow 22.5 / title 48 (59px line box, -0.01em) / subtitle 24/32,
+   with 10px eyebrow→title, 20px title→subtitle and 32px subtitle→image gaps. */
+.ag .eyebrow { margin: 0 0 10px; }
+.ag .hero__title { line-height: 1.229; letter-spacing: -0.01em; margin: 0 0 20px; }
+.ag .hero__subtitle { margin: 0 0 32px; }
+/* Hero image: plain square-cornered slot */
+.ag .hero__image { margin: 0; }
+.ag .hero__image:has(img) { border: 0; border-radius: 0; }
+.ag .hero__image.is-missing { aspect-ratio: 1025 / 713; }
+.ag .asset-slot.is-missing.hero__image::after { min-height: 100%; height: 100%; }
+
+/* Screenshot panels: 40px above (20 frame gap + 20 inset), 20px below */
+.ag .sa-shot { margin: 40px 0 20px; }
+
+/* ---- Setup cards ---------------------------------------------------- */
+.ag-cards {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.ag-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+  background: var(--grey-100);
+  border: 1px solid #ededed;
+  border-radius: 10px;
+}
+.ag-card__icon { width: 40px; height: 40px; flex: 0 0 auto; display: block; }
+.ag-card__text { display: flex; flex-direction: column; gap: 10px; }
+.ag-card__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  color: var(--grey-700);
+  margin: 0;
+}
+.ag-card__desc {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--grey-600);
+  margin: 0;
+}
+
+/* ---- Impact: three numbered columns -------------------------------- */
+.ag-lessons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 0;
+}
+.ag-lesson {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 0;
+  color: var(--grey-700);
+}
+.ag-lesson__num {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 1.2667;        /* Figma text box is 76px tall at 60px */
+}
+.ag-lesson__text { display: flex; flex-direction: column; gap: 10px; }
+.ag-lesson__title,
+.ag-lesson__desc {
+  font-family: var(--font-body);
+  font-size: 22px;
+  line-height: 32px;
+  margin: 0;
+}
+.ag-lesson__title { font-weight: 600; }
+.ag-lesson__desc { font-weight: 300; }
+
+@media (max-width: 760px) {
+  .ag-cards { grid-template-columns: 1fr; gap: 20px; }
+  .ag-lessons { grid-template-columns: 1fr; gap: 0; }
+  .ag-lesson { padding: 24px 0; gap: 24px; }
+}
+@media (max-width: 640px) {
+  .ag-lesson__num { font-size: 46px; }
+  .ag-lesson__title, .ag-lesson__desc { font-size: 20px; line-height: 30px; }
+  .ag-card__title { font-size: 20px; }
+  .ag .sa-shot:has(img) { padding: 16px; }
+}

@@ -46,3 +46,19 @@ the compliance / red-alert widget, and the 50% / 40% stat tiles.
 | `photo-4.png` | Hillside sunset                     | Row 2, left (299) |
 | `photo-5.png` | Coffee in hand                      | Row 2, middle     |
 | `photo-6.png` | Workday office sign                 | Row 2, right (304)|
+
+## Agentic Design Systems — `assets/img/agentic-ds/` (page frame `728:6952`)
+
+Page: `agentic-ds.html`. Export each node at **PNG, 2×** with these exact names
+(until they're added each slot shows a labelled placeholder).
+
+| File                    | What it is                                         | Figma node |
+|-------------------------|----------------------------------------------------|------------|
+| `hero.png`              | Hero image ("Scene 2"), 1025 × 713                 | `728:6985` |
+| `wireframe.png`         | Annotated wireframe — "Where my design time goes"  | `731:9516` |
+| `design-system-docs.png`| Design-system documentation — "The Idea"           | `732:9618` |
+| `rules-file.png`        | The rulebook file the agent reads — "Experiment"   | `728:7059` |
+| `result-screen.png`     | The screen the agent built — "Result"              | `730:9504` |
+
+Recreated in HTML/CSS (no export needed): the three Setup cards and their icons,
+and the three numbered Impact columns.
