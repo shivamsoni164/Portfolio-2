@@ -1647,7 +1647,7 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
 .hero__video { display: block; width: 100%; aspect-ratio: 1026 / 526; object-fit: cover; }
 .asset-slot.is-missing video { display: none; }
 .hero__fallback { display: block; width: 100%; aspect-ratio: 1026 / 526; object-fit: cover; }
-.hero__fallback[hidden], .hero__video[hidden] { display: none; }
+.hero__fallback[hidden], .hero__video[hidden], .vc__btn[hidden] { display: none; }
 @media (max-width: 640px) { .hero__video, .hero__fallback { aspect-ratio: 350 / 218; } }  /* after the base rule above, so it wins */
 
 /* ---- Hero video controls: slim dark bar (matches the banner button), flush at the bottom ---- */
