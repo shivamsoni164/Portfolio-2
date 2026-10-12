@@ -1557,15 +1557,17 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
   font-family: var(--font-display);
   font-optical-sizing: auto;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.229;
   color: var(--grey-800);
   margin: 0;
 }
+/* "agent" is set larger than the rest of the title (Figma: 28px vs 24px) */
+.ag-banner__em { font-size: 28px; }
 .ag-banner__desc {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 30px;
   color: var(--grey-700);
   margin: 0;
@@ -1574,7 +1576,7 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 20px;
+  padding: 10px 16px;
   background: var(--grey-900);
   color: var(--grey-40);
   font-family: var(--font-mono);
@@ -1627,6 +1629,7 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
   /* banner */
   .ag-banner { padding: 10px; gap: 18px; margin-bottom: 25px; }
   .ag-banner__title { font-size: 22px; }
+  .ag-banner__em { font-size: inherit; }
   .ag-banner__desc { font-size: 16px; line-height: 22px; }
   .ag-banner__btn { padding: 10.08px 14.4px; gap: 7.2px; font-size: 12.96px; line-height: 15.84px; }
   .ag-banner__icon { width: 15.12px; height: 15.12px; }
