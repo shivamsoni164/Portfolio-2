@@ -682,17 +682,19 @@ a { color: inherit; text-decoration: none; }
 
 /* ---- Work ---- */
 .hp-work { display: flex; flex-direction: column; gap: 60px; padding-top: 40px; }
+/* Each project is a grey card (Figma: grey-100 panel, 30px padding, 60px text/image gap) */
 .hp-case {
   display: flex;
   gap: 60px;
   align-items: flex-start;
+  padding: 30px;
+  background: var(--grey-100);
   text-decoration: none;
   color: inherit;
-  border-radius: 12px;
-  outline-offset: 8px;
+  outline-offset: 4px;
 }
 .hp-case__text {
-  flex: 642 1 0;
+  flex: 582 1 0;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -713,7 +715,7 @@ a { color: inherit; text-decoration: none; }
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: clamp(22px, 2.6vw, 34px);
-  line-height: 1.14;
+  line-height: 1.235;
   letter-spacing: -0.01em;
   color: var(--grey-900);
   margin: 0;
@@ -737,8 +739,9 @@ a { color: inherit; text-decoration: none; }
 }
 .hp-case__subtitle {
   font-family: var(--font-body);
+  font-weight: 300;
   font-size: clamp(14px, 1.15vw, 18px);
-  line-height: 1.45;
+  line-height: 1.667;
   color: var(--grey-700);
   margin: 0;
 }
@@ -754,10 +757,12 @@ a { color: inherit; text-decoration: none; }
 .hp-meta__col dd {
   margin: 0;
   font-family: var(--font-body);
-  font-size: clamp(14px, 1.15vw, 18px);
-  line-height: 1.33;
-  color: var(--grey-400);
+  font-size: clamp(14px, 1.15vw, 16px);
+  line-height: 24px;
+  color: var(--grey-500);
 }
+.hp-meta__col dd span { display: block; }
+.hp-meta__col dd span + span { margin-top: 2px; }
 .hp-case:focus-visible { outline: 2px solid var(--accent); }
 
 /* ---- Case media (single browser-mockup image supplied by the designer) ---- */
@@ -768,6 +773,9 @@ a { color: inherit; text-decoration: none; }
 /* Placeholder box until the mockup image is uploaded */
 .hp-case__media.is-missing { aspect-ratio: 1600 / 1000; background: var(--grey-100); }
 .hp-case__media.is-missing::after { min-height: 200px; }
+/* Agentic Design System card: a plain screen image (white, square top, 11.25px bottom corners) */
+.hp-case__media--screen { background: #fff; border-radius: 0 0 11.25px 11.25px; overflow: hidden; }
+.hp-case__media--screen img { aspect-ratio: 900 / 371; object-fit: cover; }
 
 /* Stack to a single column on tablet + mobile; laptop mockup goes on top */
 @media (max-width: 1279px) {
@@ -783,6 +791,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 640px) {
   /* Meta columns shrink so Role + Timeline still sit side by side on phones */
   .hp-meta__col { width: auto; min-width: 108px; }
+  .hp-case { padding: 20px; }
 }
 
 /* ========================================================= ANIMATION */
