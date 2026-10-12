@@ -1220,7 +1220,6 @@ body.kf {
 body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
 
 .about-stack { display: flex; flex-direction: column; gap: 44px; width: 100%; }
-.about-divider { border: 0; border-top: 1px solid var(--hairline); margin: 0; width: 100%; }
 
 /* Photo bento — 768 × 428, two rows of three (widths per Figma). */
 .about-bento {
@@ -1303,7 +1302,6 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
   .about-bento { aspect-ratio: auto; }
   .about-bento__row { height: 150px; flex: 0 0 auto; gap: 4px; }
   .about-bento { gap: 8px; }
-  .about-divider { display: none; }
 }
 
 /* =====================================================================
