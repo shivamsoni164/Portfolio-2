@@ -1,6 +1,6 @@
 # Agentic Design Systems hero video
 
-A silent, looping, autoplay video fills the hero slot on `agentic-ds.html`
+A muted, autoplay video that plays once and then stops fills the hero slot on `agentic-ds.html`
 (1025 x 713, about 1.44:1; it is scaled to fill and cropped to that frame).
 
 | File | What it is |
@@ -10,7 +10,11 @@ A silent, looping, autoplay video fills the hero slot on `agentic-ds.html`
 
 Until `hero.mp4` exists the slot shows a labelled placeholder.
 
-Browsers only autoplay **muted** video, so the loop has no sound.
+Browsers only autoplay **muted** video, so it starts silent. A slim control bar
+(over the bottom of the video) lets visitors play/pause, drag the timeline, replay
+after it ends, and unmute. Pausing sticks; reduced-motion visitors see the poster
+until they press play. The icons are drawn in the css.gg style; to use the exact
+css.gg SVGs, swap the inline `<svg>`s inside `.vc` in `agentic-ds.html`.
 
 ## Compressing a big export
 
