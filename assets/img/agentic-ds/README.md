@@ -10,6 +10,8 @@ Until they exist, each slot on `agentic-ds.html` shows a labelled placeholder.
 | `rules-file.png` | Experiment |
 | `result-screen.png` | Result |
 
+(All four are in place.)
+
 Source nodes are listed in `docs/figma-assets.md`.
 
 The hero is a video, see `assets/video/agentic-ds/README.md`.

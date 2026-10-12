@@ -1465,7 +1465,7 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
 /* Hero image: plain square-cornered slot */
 .ag .hero__image { margin: 0; }
 .ag .hero__image:has(img) { border: 0; border-radius: 0; }
-.ag .hero__image.is-missing { aspect-ratio: 1025 / 713; }
+.ag .hero__image.is-missing { aspect-ratio: 1026 / 526; }
 .ag .asset-slot.is-missing.hero__image::after { min-height: 100%; height: 100%; }
 
 /* Screenshot panels: 40px above (20 frame gap + 20 inset), 20px below */
@@ -1540,19 +1540,99 @@ body.about .home-layout { padding-top: 47px; padding-bottom: 48px; }
 .ag-lesson__title { font-weight: 600; }
 .ag-lesson__desc { font-weight: 300; }
 
+/* ---- Banner: "Try the agent yourself" (Figma 746:10086 / mobile 746:10113) ---- */
+.ag-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px;
+  margin: 0 0 60px;
+  background: var(--grey-200);
+  border: 1px solid var(--grey-300);
+}
+.ag-banner:last-child { margin-bottom: 0; }
+.ag-banner__text { display: flex; flex-direction: column; gap: 7px; width: 100%; }
+.ag-banner__title {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.229;
+  color: var(--grey-800);
+  margin: 0;
+}
+.ag-banner__desc {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 30px;
+  color: var(--grey-700);
+  margin: 0;
+}
+.ag-banner__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--grey-900);
+  color: var(--grey-40);
+  font-family: var(--font-mono);
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .18s ease, color .18s ease;
+}
+.ag-banner__icon { width: 21px; height: 21px; flex: 0 0 auto; display: block; }
+.ag-banner__btn:hover { background: var(--grey-40); color: var(--grey-900); box-shadow: inset 0 0 0 1px var(--grey-900); }
+.ag-banner__btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .ag-banner__btn { transition: none; } }
+
+/* ---- Stacked layout (large phones / small tablets) ---- */
 @media (max-width: 760px) {
   .ag-cards { grid-template-columns: 1fr; gap: 20px; }
-  .ag-lessons { grid-template-columns: 1fr; gap: 0; }
-  .ag-lesson { padding: 24px 0; gap: 24px; }
-}
-@media (max-width: 640px) {
-  .ag-lesson__num { font-size: 46px; }
-  .ag-lesson__title, .ag-lesson__desc { font-size: 20px; line-height: 30px; }
-  .ag-card__title { font-size: 20px; }
-  .ag .sa-shot:has(img) { padding: 16px; }
+  .ag-lessons { grid-template-columns: 1fr; gap: 15px; }
+  .ag-lesson { padding: 10px 0; gap: 20px; }
 }
 
-/* Hero video (silent autoplay loop): fills the Figma 1025 x 713 slot, cropped to fit */
+/* ---- Phone (Figma "Home Page - Mobile", 390 wide) ---- */
+@media (max-width: 640px) {
+  .ag .section { margin-bottom: 25px; }
+  .ag .section__title { font-size: 24px; line-height: 34px; letter-spacing: -1.04px; margin: 0 0 15px; }
+  .ag .body { font-weight: 400; font-size: 14px; line-height: 24px; letter-spacing: 0.07px; color: var(--grey-600); margin: 0 0 15px; }
+
+  /* hero header */
+  .ag .hero__title { font-size: 24px; letter-spacing: -0.24px; margin: 0 0 20px; }
+  .ag .hero__subtitle { font-size: 18px; line-height: 28px; color: var(--grey-600); margin: 0 0 20px; }
+  .hero__video { aspect-ratio: 350 / 218; }
+  .ag .hero__image.is-missing { aspect-ratio: 350 / 218; }
+
+  /* image panels: 5px inset, 20px above / 5px below */
+  .ag .sa-shot { margin: 20px 0 5px; }
+  .ag .sa-shot:has(img) { padding: 5px; }
+
+  /* Setup cards */
+  .ag-cards { margin-top: 15px; }
+  .ag-card__title { font-size: 18px; color: var(--grey-600); }
+  .ag-card__desc { font-size: 14px; line-height: 24px; letter-spacing: 0.07px; }
+
+  /* Learning columns */
+  .ag-lessons { margin-top: 0; }
+  .ag-lesson { color: var(--grey-600); }
+  .ag-lesson__num { font-size: 40px; line-height: 1.25; }
+  .ag-lesson__title { font-size: 18px; line-height: 32px; }
+  .ag-lesson__desc { font-weight: 400; font-size: 14px; line-height: 24px; letter-spacing: 0.07px; }
+
+  /* banner */
+  .ag-banner { padding: 10px; gap: 18px; margin-bottom: 25px; }
+  .ag-banner__title { font-size: 22px; }
+  .ag-banner__desc { font-size: 16px; line-height: 22px; }
+  .ag-banner__btn { padding: 10.08px 14.4px; gap: 7.2px; font-size: 12.96px; line-height: 15.84px; }
+  .ag-banner__icon { width: 15.12px; height: 15.12px; }
+}
+
+/* Hero video (silent autoplay loop): fills the Figma 1026 x 526 slot, cropped to fit */
 .ag .hero__image:has(video) { border: 0; border-radius: 0; background: transparent; }
-.hero__video { display: block; width: 100%; aspect-ratio: 1025 / 713; object-fit: cover; }
+.hero__video { display: block; width: 100%; aspect-ratio: 1026 / 526; object-fit: cover; }
 .asset-slot.is-missing video { display: none; }

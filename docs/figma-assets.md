@@ -47,7 +47,7 @@ the compliance / red-alert widget, and the 50% / 40% stat tiles.
 | `photo-5.png` | Coffee in hand                      | Row 2, middle     |
 | `photo-6.png` | Workday office sign                 | Row 2, right (304)|
 
-## Agentic Design Systems — `assets/img/agentic-ds/` (page frame `728:6952`)
+## Agentic Design Systems — `assets/img/agentic-ds/` (desktop frame `728:6952`, mobile frame `742:9811`)
 
 Page: `agentic-ds.html`. Export each node at **PNG, 2×** with these exact names
 (until they're added each slot shows a labelled placeholder).
@@ -65,4 +65,8 @@ fallback, also shown for reduced-motion visitors). Keep the mp4 under ~10 MB
 (see `assets/video/agentic-ds/README.md`).
 
 Recreated in HTML/CSS (no export needed): the three Setup cards and their icons,
-and the three numbered Impact columns.
+the three numbered Learning columns, and the "Try the agent yourself" banner
+(shown twice: after the hero and before the footer; both link to the
+Agentic-Carbon-Design-System GitHub repo and open in a new tab).
+
+The same images are used at every width; the mobile frame only changes sizes and spacing.
