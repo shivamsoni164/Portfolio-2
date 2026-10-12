@@ -1,7 +1,7 @@
 # Agentic Design Systems hero video
 
 A muted, autoplay video that plays once and then stops fills the hero slot on `agentic-ds.html`
-(1026 x 526 on desktop, 350 x 218 on phones; the video is scaled to fill and cropped to that frame).
+(the box is 16:9, the same shape as the video, so nothing is cropped).
 
 | File | What it is |
 |---|---|
