@@ -25,7 +25,7 @@
   });
 
   /* ---------- 1b. Hero video (autoplay muted, play once, custom controls) ------ */
-  // - falls back to the labelled placeholder if the file is missing
+  // - falls back to the still image (or the labelled placeholder) if the file is missing
   // - reduced-motion visitors get just the poster until they press play
   // - pauses while off-screen and resumes (unless the visitor paused it themselves)
   // - custom bar: play/pause/replay, timeline, time, mute/unmute
@@ -35,7 +35,12 @@
     function noop() {}
     function tryPlay() { var p = video.play(); if (p && p.catch) p.catch(noop); }
 
-    function markMissing() { slot.classList.add("is-missing"); if (bar) bar.hidden = true; }
+    function markMissing() {
+      if (bar) bar.hidden = true;
+      var fb = slot.querySelector(".hero__fallback");
+      if (fb) { fb.hidden = false; video.hidden = true; slot.classList.add("has-fallback"); return; }
+      slot.classList.add("is-missing");
+    }
     var sources = video.querySelectorAll("source");
     if (sources.length) sources[sources.length - 1].addEventListener("error", markMissing);
     video.addEventListener("error", markMissing);
